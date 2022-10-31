@@ -12,21 +12,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleIncrementGood = () => {
+  incrementFeedback = key => {
     this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-
-  handleIncrementNautral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  handleIncrementBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [key]: prevState[key] + 1,
     }));
   };
 
@@ -47,9 +35,8 @@ export class App extends Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onIncrementGood={this.handleIncrementGood}
-            onIncrementNautral={this.handleIncrementNautral}
-            onIncrementBad={this.handleIncrementBad}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.incrementFeedback}
           />
         </Section>
         <Section title="Statistics">

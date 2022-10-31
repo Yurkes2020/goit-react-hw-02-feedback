@@ -1,17 +1,13 @@
-export const FeedbackOptions = ({
-  onIncrementGood,
-  onIncrementNautral,
-  onIncrementBad,
-}) => (
-  <>
-    <button type="button" onClick={onIncrementGood}>
-      Good
-    </button>
-    <button type="button" onClick={onIncrementNautral}>
-      Nautral
-    </button>
-    <button type="button" onClick={onIncrementBad}>
-      Bad
-    </button>
-  </>
-);
+import { Button } from './FeedbackOptions.styled';
+
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return (
+    <>
+      {options.map(option => (
+        <Button key={option} onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </Button>
+      ))}
+    </>
+  );
+};
