@@ -1,4 +1,3 @@
-// import { theme } from './theme';
 import { useState } from 'react';
 import { Statistic } from 'components/Feedback/Statistic/Statistics ';
 import { Section } from './Feedback/Section/Section';
